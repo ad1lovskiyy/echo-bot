@@ -45,6 +45,7 @@ async def start_command(message: types.Message):
                          reply_markup=rkb)
 
 
+
 @dp.callback_query_handler(text='like')
 async def like_button(callback: types.CallbackQuery):
     await callback.answer("You like it")
