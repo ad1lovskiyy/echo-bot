@@ -18,7 +18,6 @@ rkb = ReplyKeyboardMarkup(resize_keyboard=True)
 rkb.add(KeyboardButton(text="/help"))
 rkb.add(KeyboardButton(text="/restart"))
 
-
 # @dp.message_handler(commands=['start'])
 # async def start_command(massage: types.Message):
 #     await massage.reply(text="Qalaysan")
@@ -45,13 +44,16 @@ async def start_command(message: types.Message):
                          caption="Bu rasm sizga yoqdimi?",
                          reply_markup=rkb)
 
+
 @dp.callback_query_handler(text='like')
 async def like_button(callback: types.CallbackQuery):
     await callback.answer("You like it")
 
+
 @dp.callback_query_handler(text='dislike')
 async def like_button(callback: types.CallbackQuery):
     await callback.answer("You dislike it")
+
 
 if __name__ == '__main__':
     executor.start_polling(dp)
